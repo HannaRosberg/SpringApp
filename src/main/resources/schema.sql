@@ -1,0 +1,25 @@
+DROP TABLE IF EXISTS location;
+DROP TABLE IF EXISTS category;
+
+
+CREATE TABLE IF NOT EXISTS category (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    symbol VARCHAR(255),
+    description VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS location (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    category_id INT,
+    FOREIGN KEY (category_id) REFERENCES category(id),
+    user_id VARCHAR(255) NOT NULL,
+    is_private BOOLEAN NOT NULL,
+    last_modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    description VARCHAR(255),
+    coordinates GEOMETRY NOT NULL SRID 4326,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
+
+);
