@@ -38,7 +38,7 @@ public class Location {
     @Temporal(TemporalType.TIMESTAMP)
     private boolean isPrivate;
 
-    @Column(name = "created")
+    @Column(name = "created_at")
     @Temporal(TemporalType.TIMESTAMP)
     private Date created;
 
@@ -51,7 +51,7 @@ public class Location {
     private String description;
 
     @NotNull
-    @Column(name = "coordinate")
+    @Column(name = "coordinates")
     private Point<G2D> coordinate;
 
     @ColumnDefault("0")
@@ -122,6 +122,5 @@ public class Location {
     protected void onUpdate() {
         this.lastModified = new Date();
     }
-
 
 }

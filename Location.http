@@ -1,0 +1,56 @@
+
+### Get all public locations
+GET http://localhost:8080/api/locations
+Content-Type: application/json
+
+### Get public locations by ID
+GET http://localhost:8080/api/locations/{{id}}
+
+### Get public locations by CategoryID
+GET http://localhost:8080/api/locations/categories/{{id}}
+
+### Get all public and private places by logged in user
+GET http://localhost:8080/api/locations/all/user
+
+### Get location with longitud and latitud
+GET http://localhost:8080/api/locations/area/-73.98513/40.758896
+
+### Create a new location
+POST http://localhost:8080/api/locations
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "",
+  "categoryId": 0,
+  "userId": "",
+  "isPrivate": false,
+  "created": "",
+  "lastModified": "",
+  "description": "",
+  "latitude": 0,
+  "longitude": 0,
+  "isDeleted": false
+}
+
+### Delete a location with a specific ID
+PUT http://localhost:8080/api/locations/delete/{{id}}
+Content-Type: application/x-www-form-urlencoded
+
+### Update a location with a specific ID
+PUT http://localhost:8080/api/locations/edit/{{id}}
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "",
+  "categoryId": 0,
+  "userId": "",
+  "isPrivate": false,
+  "created": "",
+  "lastModified": "",
+  "description": "",
+  "latitude": 0,
+  "longitude": 0,
+  "isDeleted": false
+}

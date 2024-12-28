@@ -31,7 +31,7 @@ public class CategoryController {
 
     @PostMapping
     @PreAuthorize("hasAuthority('SCOPE_admin')")
-    public ResponseEntity<Void> createPerson(@RequestBody CategoryDTO categoryDTO) {
+    public ResponseEntity<Void> createCategory(@RequestBody CategoryDTO categoryDTO) {
         int id = categoryService.addCategory(categoryDTO);
         return ResponseEntity.created(URI.create("/categories/" + id)).build();
     }

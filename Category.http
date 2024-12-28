@@ -1,0 +1,16 @@
+### Get all categories
+GET http://localhost:8080/api/categories
+Content-Type: application/json
+
+### Get category by name
+GET http://localhost:8080/api/categories/{{name}}
+
+### Create a new category
+POST http://localhost:8080/api/categories
+Content-Type: application/json
+
+{
+  "name": "",
+  "symbol": "",
+  "description": ""
+}

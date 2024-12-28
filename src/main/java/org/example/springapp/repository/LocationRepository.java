@@ -21,4 +21,5 @@ public interface LocationRepository extends ListCrudRepository<Location, Integer
 
     @Query("SELECT l FROM Location l WHERE (l.isPrivate = false AND l.deleted = false AND l.categoryId = :categoryId) OR (l.userId = :userId AND l.deleted = false)")
     List<Location> findByCategoryIdAndIsPrivateFalseAndDeletedFalseOrUserIdAndDeletedFalse(@Param("categoryId") Integer categoryId, @Param("userId") String userId);
+
 }
